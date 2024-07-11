@@ -13,19 +13,22 @@ docker run -d --name kafka --network kafka-net -p 9092:9092 -e KAFKA_ZOOKEEPER_C
 #Create Kafka Topic Using Kafka CLI Command
 docker exec -it kafka /bin/bash
 
-kafka-topics --create --topic test-topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1
+[appuser@7a5cd2130dd8 ~]$kafka-topics --create --topic test-topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1
 ```
 
 
 ```python
 #Send Message to Kafka Topic Using Kafka CLI Command
-kafka-console-producer --topic test-topic --bootstrap-server localhost:9092
+[appuser@7a5cd2130dd8 ~]$ kafka-console-producer --topic test-topic --bootstrap-server localhost:9092
 ```
-
+> Hello World
+> This is a Message
 
 ```python
-#Listen to Messages Produced on Some Topic Using Kafka CLI Command
+#Listen to Messages Produced on Some Topic Using Kafka CLI Command(Openned new Terminal)
 docker exec -it kafka /bin/bash
 
-kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --from-beginning
+[appuser@7a5cd2130dd8 ~]$kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --from-beginning
 ```
+Hello World
+This is a Message
