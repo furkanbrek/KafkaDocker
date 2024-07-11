@@ -21,8 +21,13 @@ docker exec -it kafka /bin/bash
 #Send Message to Kafka Topic Using Kafka CLI Command
 [appuser@7a5cd2130dd8 ~]$ kafka-console-producer --topic test-topic --bootstrap-server localhost:9092
 ```
-> Hello World
-> This is a Message
+
+
+```python
+#> Hello World
+#> This is a Message
+```
+
 
 ```python
 #Listen to Messages Produced on Some Topic Using Kafka CLI Command(Openned new Terminal)
@@ -30,5 +35,9 @@ docker exec -it kafka /bin/bash
 
 [appuser@7a5cd2130dd8 ~]$kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --from-beginning
 ```
-Hello World
-This is a Message
+
+
+```python
+#Hello World
+#This is a Message
+```
